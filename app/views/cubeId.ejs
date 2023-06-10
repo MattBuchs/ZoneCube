@@ -1,0 +1,16 @@
+<%- include('partials/header') %>
+
+<h2><%= article.name %></h2>
+
+<div class="home-container">
+    <div class="article-container">
+        <img src="<%= article.image_url %>" alt="<%= article.name %>">
+
+        <div>
+            <h4><%= article.brand %></h4>
+            <p><%= article.description %></p>
+            <span><%= article.price %>€</span>
+        </div>
+    </div>
+</div>
+<%- include('partials/footer') %>

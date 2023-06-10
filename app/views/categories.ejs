@@ -1,0 +1,12 @@
+<%- include('partials/header') %>
+
+<h2>Les catégories</h2>
+
+<% for(const categorie of categories) { %>
+    <a href="/category/<%= categorie.id %>">
+        <h3><%= categorie.name %></h3>
+        <p><%= categorie.description %></p>
+    </a>
+<% } %>
+
+<%- include('partials/footer') %>

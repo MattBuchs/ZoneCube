@@ -1,0 +1,15 @@
+<%- include('partials/header') %>
+
+<h2>Catégorie : <%= cubes[0].category.dataValues.name %></h2>
+
+<div class="home-container">
+    <% for(const cube of cubes) { %>
+        <div class="article-container">
+            <h3><%= cube.name %></h3>
+            <img src="<%= cube.image_url %>" alt="<%= cube.name %>">
+            <a href="/cube/<%= cube.id %>">Voir produit</a>
+        </div>
+    <% } %>
+</div>
+
+<%- include('partials/footer') %>

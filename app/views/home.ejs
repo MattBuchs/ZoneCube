@@ -1,0 +1,14 @@
+<%- include('partials/header') %>
+
+<h2>Accueil</h2>
+
+<div class="home-container">
+    <% for(const article of articles) { %>
+        <div class="article-container">
+            <h3><%= article.name %></h3>
+            <img src="<%= article.image_url %>" alt="<%= article.name %>">
+            <a href="/cube/<%= article.id %>">Voir produit</a>
+        </div>
+    <% } %>
+</div>
+<%- include('partials/footer') %>

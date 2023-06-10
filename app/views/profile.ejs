@@ -1,0 +1,14 @@
+<%- include('partials/header') %>
+
+<h2>Votre profile</h2>
+
+<% if(locals.user) { %>
+    <input type="text" value="<%= user.firstname %> <%= user.lastname %>" disabled>
+    <input type="text" value="<%= user.email %>" disabled>
+
+    <form action="/signout">
+        <button type="submit">Se déconnecter</button>
+    </form>
+<% } %>
+
+<%- include('partials/footer') %>
