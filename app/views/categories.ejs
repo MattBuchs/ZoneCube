@@ -2,11 +2,37 @@
 
 <h2>Les catégories</h2>
 
-<% for(const categorie of categories) { %>
-    <a href="/category/<%= categorie.id %>">
-        <h3><%= categorie.name %></h3>
-        <p><%= categorie.description %></p>
-    </a>
+<form>
+    <label for="category">Choisir la catégorie :</label>
+    <select name="category" id="category">
+        <% if(locals.categoriesKind) { %>
+            <option value="kind">Par types</option>
+            <option value="brand">Par marque</option>
+        <% } else { %>
+            <option value="brand">Par marque</option>
+            <option value="kind">Par types</option>
+        <% } %>
+    </select>
+</form>
+
+<% if(locals.categoriesKind) { %>
+    <% for(const categorie of categoriesKind) { %>
+        <a href="/category/kind/<%= categorie.id %>">
+            <h3><%= categorie.name %></h3>
+            <p><%= categorie.description %></p>
+        </a>
+    <% } %>
 <% } %>
+
+<% if(locals.categoriesBrand) { %>
+    <% for(const categorie of categoriesBrand) { %>
+            <a href="/category/brand/<%= categorie.id %>">
+                <h3><%= categorie.name %></h3>
+            </a>
+        </a>
+    <% } %>
+<% } %>
+
+<script src="/js/selectedCategoryChoice.js"></script>
 
 <%- include('partials/footer') %>

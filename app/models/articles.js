@@ -17,15 +17,12 @@ Articles.init(
       type: DataTypes.DECIMAL,
       allowNull: false,
     },
-    brand: {
-      type: DataTypes.TEXT,
-      allowNull: true,
-    },
     image_url: {
       type: DataTypes.TEXT,
       allowNull: true,
     },
     category_id: DataTypes.INTEGER,
+    brand_id: DataTypes.INTEGER,
   },
   {
     sequelize: getConnexion(),

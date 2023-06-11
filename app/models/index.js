@@ -2,6 +2,7 @@ const Users = require("./users");
 const Articles = require("./articles");
 const Addresses = require("./addresses");
 const Categories = require("./categories");
+const Brands = require("./brands");
 
 // Addresses et Users
 Addresses.hasMany(Users, {
@@ -40,4 +41,15 @@ Articles.belongsTo(Categories, {
   as: "category",
 });
 
-module.exports = { Users, Articles, Addresses, Categories };
+// Brands et Aticles
+Brands.hasMany(Articles, {
+  foreignKey: "brand_id",
+  as: "articles",
+});
+
+Articles.belongsTo(Brands, {
+  foreignKey: "brand_id",
+  as: "brand",
+});
+
+module.exports = { Users, Articles, Addresses, Categories, Brands };

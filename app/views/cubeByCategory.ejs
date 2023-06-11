@@ -1,6 +1,10 @@
 <%- include('partials/header') %>
 
-<h2>Catégorie : <%= cubes[0].category.dataValues.name %></h2>
+<% if(locals.cubes[0].brand) { %>
+    <h2>Catégorie : <%= cubes[0].brand.name %></h2>
+<% } else if (locals.cubes[0].category) { %>
+    <h2>Catégorie : <%= cubes[0].category.name %></h2>
+<% } %>
 
 <div class="home-container">
     <% for(const cube of cubes) { %>

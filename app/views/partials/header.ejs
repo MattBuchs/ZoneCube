@@ -11,16 +11,23 @@
   <body>
     <nav>
       <h1>ZoneCube</h1>
-
+   
       <ul>
+        <li>
+          <form action="/search">
+            <input type="text" name="search" placeholder="Ex: Rubik's">
+          </form>
+        </li>
         <li><a href="/">Accueil</a></li>
         <% if(!locals.user) { %>
           <li><a href="/signin">Se connecter</a></li>
           <li><a href="/signup">S'inscrire</a></li>
         <% } else { %>
-          <li><a href="/categories">Catégories</a></li>
+          <li><a href="/category/kind">Catégories</a></li>
           <li><a href="/profile">Profile</a></li>
+        <% } %>
+        <% if(locals.user && locals.user.role === "admin") { %>
+          <li><a href="/admin">Admin</a></li>
         <% } %>
       </ul>
     </nav>
-    <main>

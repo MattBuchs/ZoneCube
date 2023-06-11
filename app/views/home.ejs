@@ -1,6 +1,10 @@
 <%- include('partials/header') %>
 
-<h2>Accueil</h2>
+<% if(locals.search) { %>
+    <h2>Résultat de la recherche : "<%= search %>"</h2>
+<% } else { %>
+    <h2>Accueil</h2>
+<% } %>
 
 <div class="home-container">
     <% for(const article of articles) { %>
